@@ -56,11 +56,13 @@ Public Class Form1
                 RX = New StreamReader(Client.GetStream)
                 TempClient = Client
                 If Client.Client.Connected = True Then
-                    TX.WriteLine("Set your username /Setuser <Nickname>")
+                    TX.WriteLine("Set your username /setuser <Nickname>")
                     TX.Flush()
-                    TX.WriteLine("No spaces in your nickname. <3")
+                    TX.WriteLine("No spaces in your nickname>>>")
                     TX.Flush()
                     TX.WriteLine("Until you set a Username, it will show your IP as a nickname.")
+                    TX.Flush()
+                    TX.WriteLine("Check current users /users")
                     TX.Flush()
 
                     While Client.GetStream.CanRead = True
