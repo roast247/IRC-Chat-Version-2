@@ -2,7 +2,9 @@
 This is Version 2 of the IRC chat, this version contains both the client and server combined
 
 PLEASE HELP! I'm not sure how to add an encryption key that the server host can input that the client has to input in order to join the chat 
-If you could tell me how to do this in the issues tab that would be great and much appreciated!
+
+If you could guide me on how to do this in the issues tab that would be great and much appreciated!
+
 I would also like to add a voice chat! So if I could get help on that too, it would also be much appreciated!
 
 
