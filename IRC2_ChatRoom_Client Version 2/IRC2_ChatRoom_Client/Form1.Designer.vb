@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -43,6 +44,9 @@ Partial Class Form1
         Me.DownR = New System.Windows.Forms.PictureBox()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Hostaserverlabel = New System.Windows.Forms.Label()
+        Me.time = New System.Windows.Forms.Label()
+        Me.lblSystemTime = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -50,11 +54,11 @@ Partial Class Form1
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBoxPORT = New System.Windows.Forms.TextBox()
         Me.TextBoxIP = New System.Windows.Forms.TextBox()
+        Me.TimerSystemTime = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         CType(Me.RightR, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LeftR, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,7 +87,7 @@ Partial Class Form1
         '
         Me.Button2.BackColor = System.Drawing.SystemColors.ControlDark
         Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(98, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Location = New System.Drawing.Point(327, 29)
         Me.Button2.Name = "Button2"
@@ -209,7 +213,7 @@ Partial Class Form1
         '
         Me.Stopserver.BackColor = System.Drawing.SystemColors.ControlDark
         Me.Stopserver.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Stopserver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Stopserver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(98, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.Stopserver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Stopserver.Location = New System.Drawing.Point(663, 3)
         Me.Stopserver.Name = "Stopserver"
@@ -294,8 +298,10 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Panel1.Controls.Add(Me.Hostaserverlabel)
+        Me.Panel1.Controls.Add(Me.time)
+        Me.Panel1.Controls.Add(Me.lblSystemTime)
         Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.TextBoxPORT)
@@ -309,6 +315,40 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(962, 58)
         Me.Panel1.TabIndex = 5
+        '
+        'Hostaserverlabel
+        '
+        Me.Hostaserverlabel.AutoSize = True
+        Me.Hostaserverlabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Hostaserverlabel.ForeColor = System.Drawing.Color.White
+        Me.Hostaserverlabel.Location = New System.Drawing.Point(595, 29)
+        Me.Hostaserverlabel.Name = "Hostaserverlabel"
+        Me.Hostaserverlabel.Size = New System.Drawing.Size(171, 20)
+        Me.Hostaserverlabel.TabIndex = 15
+        Me.Hostaserverlabel.Text = "Host Your Own Server!"
+        '
+        'time
+        '
+        Me.time.AutoSize = True
+        Me.time.BackColor = System.Drawing.Color.Transparent
+        Me.time.ForeColor = System.Drawing.Color.White
+        Me.time.Location = New System.Drawing.Point(828, 34)
+        Me.time.Name = "time"
+        Me.time.Size = New System.Drawing.Size(62, 13)
+        Me.time.TabIndex = 14
+        Me.time.Text = "Local Time:"
+        '
+        'lblSystemTime
+        '
+        Me.lblSystemTime.AutoSize = True
+        Me.lblSystemTime.BackColor = System.Drawing.Color.Transparent
+        Me.lblSystemTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSystemTime.ForeColor = System.Drawing.Color.White
+        Me.lblSystemTime.Location = New System.Drawing.Point(890, 32)
+        Me.lblSystemTime.Name = "lblSystemTime"
+        Me.lblSystemTime.Size = New System.Drawing.Size(63, 15)
+        Me.lblSystemTime.TabIndex = 13
+        Me.lblSystemTime.Text = "12:00:00"
         '
         'Panel3
         '
@@ -406,20 +446,6 @@ Partial Class Form1
         Me.Button5.Text = "X"
         Me.Button5.UseVisualStyleBackColor = False
         '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.SystemColors.InfoText
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.SystemColors.Window
-        Me.TextBox1.Location = New System.Drawing.Point(663, 29)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(169, 19)
-        Me.TextBox1.TabIndex = 8
-        Me.TextBox1.Text = "Host Your Own Server!"
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -453,6 +479,11 @@ Partial Class Form1
         Me.TextBoxIP.Name = "TextBoxIP"
         Me.TextBoxIP.Size = New System.Drawing.Size(126, 20)
         Me.TextBoxIP.TabIndex = 4
+        '
+        'TimerSystemTime
+        '
+        Me.TimerSystemTime.Enabled = True
+        Me.TimerSystemTime.Interval = 250
         '
         'Form1
         '
@@ -503,7 +534,6 @@ Partial Class Form1
     Friend WithEvents Stopserver As Button
     Friend WithEvents iplist As ListBox
     Friend WithEvents startserver As Button
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button5 As Button
     Friend WithEvents serverchat As RichTextBox
     Friend WithEvents Label6 As Label
@@ -517,4 +547,8 @@ Partial Class Form1
     Friend WithEvents UpR As PictureBox
     Friend WithEvents Label7 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents lblSystemTime As Label
+    Friend WithEvents TimerSystemTime As Timer
+    Friend WithEvents time As Label
+    Friend WithEvents Hostaserverlabel As Label
 End Class

@@ -430,20 +430,20 @@ Public Class Form1
         draggable = False
     End Sub
 
-    Private Sub TextBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles TextBox1.MouseDown
+    Private Sub TextBox1_MouseDown(sender As Object, e As MouseEventArgs)
         draggable = True
         mouseX = Cursor.Position.X - Me.Left
         mouseY = Cursor.Position.Y - Me.Top
     End Sub
 
-    Private Sub TextBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles TextBox1.MouseMove
+    Private Sub TextBox1_MouseMove(sender As Object, e As MouseEventArgs)
         If draggable Then
             Me.Top = Cursor.Position.Y - mouseY
             Me.Left = Cursor.Position.X - mouseX
         End If
     End Sub
 
-    Private Sub TextBox1_MouseUp(sender As Object, e As MouseEventArgs) Handles TextBox1.MouseUp
+    Private Sub TextBox1_MouseUp(sender As Object, e As MouseEventArgs)
         draggable = False
     End Sub
 
@@ -582,6 +582,61 @@ Public Class Form1
     End Sub
 
     Private Sub PictureBox1_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseUp
+        draggable = False
+    End Sub
+
+    Private Sub TimerSystemTime_Tick(sender As Object, e As EventArgs) Handles TimerSystemTime.Tick
+        lblSystemTime.Text = TimeString
+    End Sub
+
+    Private Sub Hostaserverlabel_MouseDown(sender As Object, e As MouseEventArgs) Handles Hostaserverlabel.MouseDown
+        draggable = True
+        mouseX = Cursor.Position.X - Me.Left
+        mouseY = Cursor.Position.Y - Me.Top
+    End Sub
+
+    Private Sub Hostaserverlabel_MouseMove(sender As Object, e As MouseEventArgs) Handles Hostaserverlabel.MouseMove
+        If draggable Then
+            Me.Top = Cursor.Position.Y - mouseY
+            Me.Left = Cursor.Position.X - mouseX
+        End If
+    End Sub
+
+    Private Sub Hostaserverlabel_MouseUp(sender As Object, e As MouseEventArgs) Handles Hostaserverlabel.MouseUp
+        draggable = False
+    End Sub
+
+    Private Sub time_MouseDown(sender As Object, e As MouseEventArgs) Handles time.MouseDown
+        draggable = True
+        mouseX = Cursor.Position.X - Me.Left
+        mouseY = Cursor.Position.Y - Me.Top
+    End Sub
+
+    Private Sub time_MouseMove(sender As Object, e As MouseEventArgs) Handles time.MouseMove
+        If draggable Then
+            Me.Top = Cursor.Position.Y - mouseY
+            Me.Left = Cursor.Position.X - mouseX
+        End If
+    End Sub
+
+    Private Sub time_MouseUp(sender As Object, e As MouseEventArgs) Handles time.MouseUp
+        draggable = False
+    End Sub
+
+    Private Sub lblSystemTime_MouseDown(sender As Object, e As MouseEventArgs) Handles lblSystemTime.MouseDown
+        draggable = True
+        mouseX = Cursor.Position.X - Me.Left
+        mouseY = Cursor.Position.Y - Me.Top
+    End Sub
+
+    Private Sub lblSystemTime_MouseMove(sender As Object, e As MouseEventArgs) Handles lblSystemTime.MouseMove
+        If draggable Then
+            Me.Top = Cursor.Position.Y - mouseY
+            Me.Left = Cursor.Position.X - mouseX
+        End If
+    End Sub
+
+    Private Sub lblSystemTime_MouseUp(sender As Object, e As MouseEventArgs) Handles lblSystemTime.MouseUp
         draggable = False
     End Sub
 End Class
