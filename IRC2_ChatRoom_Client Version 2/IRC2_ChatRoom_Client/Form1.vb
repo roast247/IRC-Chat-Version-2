@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Net
 Imports System.Net.Sockets
 
 Public Class Form1
@@ -31,6 +32,7 @@ Public Class Form1
         serveronoff.Text = ServerStatus.ToString.ToUpper
 
         MessageBox.Show("Please portforward to Port 8383", "Server Port", MessageBoxButtons.OK)
+
     End Sub
 
     Function Client_Handler(ByVal state As Object)
@@ -331,6 +333,14 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CheckForIllegalCrossThreadCalls = False
+        '' SHOW EXTERNAL IP 
+        Dim req As HttpWebRequest = WebRequest.Create("http://api.ipify.org/")
+        Dim res As HttpWebResponse = req.GetResponse()
+        Dim str As Stream = res.GetResponseStream()
+        Dim sr As StreamReader = New StreamReader(str)
+        yourip.Text = "" & sr.ReadToEnd
+        '' SHOW EXTERNAL IP
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -637,6 +647,40 @@ Public Class Form1
     End Sub
 
     Private Sub lblSystemTime_MouseUp(sender As Object, e As MouseEventArgs) Handles lblSystemTime.MouseUp
+        draggable = False
+    End Sub
+
+    Private Sub Label8_MouseDown(sender As Object, e As MouseEventArgs) Handles Label8.MouseDown
+        draggable = True
+        mouseX = Cursor.Position.X - Me.Left
+        mouseY = Cursor.Position.Y - Me.Top
+    End Sub
+
+    Private Sub Label8_MouseMove(sender As Object, e As MouseEventArgs) Handles Label8.MouseMove
+        If draggable Then
+            Me.Top = Cursor.Position.Y - mouseY
+            Me.Left = Cursor.Position.X - mouseX
+        End If
+    End Sub
+
+    Private Sub Label8_MouseUp(sender As Object, e As MouseEventArgs) Handles Label8.MouseUp
+        draggable = False
+    End Sub
+
+    Private Sub yourip_MouseDown(sender As Object, e As MouseEventArgs) Handles yourip.MouseDown
+        draggable = True
+        mouseX = Cursor.Position.X - Me.Left
+        mouseY = Cursor.Position.Y - Me.Top
+    End Sub
+
+    Private Sub yourip_MouseMove(sender As Object, e As MouseEventArgs) Handles yourip.MouseMove
+        If draggable Then
+            Me.Top = Cursor.Position.Y - mouseY
+            Me.Left = Cursor.Position.X - mouseX
+        End If
+    End Sub
+
+    Private Sub yourip_MouseUp(sender As Object, e As MouseEventArgs) Handles yourip.MouseUp
         draggable = False
     End Sub
 End Class

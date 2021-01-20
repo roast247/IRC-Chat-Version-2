@@ -44,6 +44,8 @@ Partial Class Form1
         Me.DownR = New System.Windows.Forms.PictureBox()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.yourip = New System.Windows.Forms.Label()
         Me.Hostaserverlabel = New System.Windows.Forms.Label()
         Me.time = New System.Windows.Forms.Label()
         Me.lblSystemTime = New System.Windows.Forms.Label()
@@ -298,6 +300,8 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.yourip)
         Me.Panel1.Controls.Add(Me.Hostaserverlabel)
         Me.Panel1.Controls.Add(Me.time)
         Me.Panel1.Controls.Add(Me.lblSystemTime)
@@ -316,6 +320,29 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(962, 58)
         Me.Panel1.TabIndex = 5
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(825, 38)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(45, 13)
+        Me.Label8.TabIndex = 17
+        Me.Label8.Text = "Your IP:"
+        '
+        'yourip
+        '
+        Me.yourip.AutoSize = True
+        Me.yourip.BackColor = System.Drawing.Color.Transparent
+        Me.yourip.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.yourip.ForeColor = System.Drawing.Color.White
+        Me.yourip.Location = New System.Drawing.Point(876, 38)
+        Me.yourip.Name = "yourip"
+        Me.yourip.Size = New System.Drawing.Size(10, 13)
+        Me.yourip.TabIndex = 16
+        Me.yourip.Text = " "
+        '
         'Hostaserverlabel
         '
         Me.Hostaserverlabel.AutoSize = True
@@ -332,7 +359,7 @@ Partial Class Form1
         Me.time.AutoSize = True
         Me.time.BackColor = System.Drawing.Color.Transparent
         Me.time.ForeColor = System.Drawing.Color.White
-        Me.time.Location = New System.Drawing.Point(828, 34)
+        Me.time.Location = New System.Drawing.Point(825, 24)
         Me.time.Name = "time"
         Me.time.Size = New System.Drawing.Size(62, 13)
         Me.time.TabIndex = 14
@@ -342,11 +369,11 @@ Partial Class Form1
         '
         Me.lblSystemTime.AutoSize = True
         Me.lblSystemTime.BackColor = System.Drawing.Color.Transparent
-        Me.lblSystemTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSystemTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSystemTime.ForeColor = System.Drawing.Color.White
-        Me.lblSystemTime.Location = New System.Drawing.Point(890, 32)
+        Me.lblSystemTime.Location = New System.Drawing.Point(893, 24)
         Me.lblSystemTime.Name = "lblSystemTime"
-        Me.lblSystemTime.Size = New System.Drawing.Size(63, 15)
+        Me.lblSystemTime.Size = New System.Drawing.Size(57, 13)
         Me.lblSystemTime.TabIndex = 13
         Me.lblSystemTime.Text = "12:00:00"
         '
@@ -551,4 +578,6 @@ Partial Class Form1
     Friend WithEvents TimerSystemTime As Timer
     Friend WithEvents time As Label
     Friend WithEvents Hostaserverlabel As Label
+    Friend WithEvents yourip As Label
+    Friend WithEvents Label8 As Label
 End Class
