@@ -9,3 +9,6 @@ I would also like to add a voice chat! So if I could get help on that too, it wo
 
 
 <img src="https://raw.githubusercontent.com/roast247/IRC-Chat-Source-Code-Version-2/main/Roasting%20IRC.png">
+
+
+Disclaimer: I am not resposible for any illegal actions with the use of my programs
