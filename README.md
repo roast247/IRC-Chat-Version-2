@@ -7,6 +7,7 @@ If you could guide me on how to do this in the issues tab that would be great an
 
 I would also like to add a voice chat! So if I could get help on that too, it would also be much appreciated!
 
+Check me out on <a href="https://hackforums.net/member.php?action=register&referrer=4952323">Hackforums</a>
 
 <img src="https://raw.githubusercontent.com/roast247/IRC-Chat-Source-Code-Version-2/main/Roasting%20IRC.png">
 
