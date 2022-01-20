@@ -9,5 +9,5 @@ I would also like to add a voice chat! So if I could get help on that too, it wo
 <hr>
 Disclaimer: I am not resposible for any illegal actions with the use of my programs
 
-  If you would like to contact me, email me at roast247@protonmail.com
+  If you would like to contact me, email me at support@roast247.eu.org
 </h4>
