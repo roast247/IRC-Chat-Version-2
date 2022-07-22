@@ -9,5 +9,13 @@ I would also like to add a voice chat! So if I could get help on that too, it wo
 <hr>
 Disclaimer: I am not resposible for any illegal actions with the use of my programs
 
-  If you would like to contact me, email me at support@roast247.eu.org
+  If you would like to contact me, email me at https://roast247.eu.org/contact.php
+</h4>
+
+<h4 align="center">
+
+  
+  ![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=roast247&show_icons=true)
+
+
 </h4>
